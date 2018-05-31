@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1em;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  min-width: 300px
+}
+
+:host-context(.light) h1 {
+  background-color: #eee;
+  color: black
+}
+
+h1 {
+  margin-bottom: 1em
+}
+
+button {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  font-size: 1em
+  //&.not(.active) { opacity: 0.56 }
+}
+
+
+.highlight {
+  background-color: rgb(200, 50, 50);
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 1em;
+  display: inline-block;
+}
+
+.active {
+  background-color: rgb(50, 50, 200);
+  color: white
+}
+
+.shadow { box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2) }
