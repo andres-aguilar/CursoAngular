@@ -10,6 +10,7 @@ export class TitleComponent implements OnInit{
 
   public isAvailable : boolean = false;
   public moreInfo : boolean = false;
+  public category : string;  // mobile, web. other
 
   public topics : string[];
 
@@ -17,6 +18,7 @@ export class TitleComponent implements OnInit{
 
   ngOnInit() {
     this.name = 'Andres Aguilar';
+    this.category = "web";
     this.topics = [
       'Fundamentos',
       'Componentes',
