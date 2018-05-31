@@ -1,17 +1,25 @@
 <h1> Curso Angular </h1>
-<h3>Tutor: {{name}}</h3>
-
-<div>
-  <a (click)="showMoreInfo()">Más información <i class="fa" [ngClass]="{'fa-chevron-circle-down': !moreInfo, 'fa-chevron-circle-up': moreInfo}"></i></a>
-  <p *ngIf="moreInfo">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
 
 <p *ngIf="isAvailable; else available">Lanzamiento: Proximamente</p>
 <ng-template #available>
   <span class="highlight"> Curso disponible </span>
 </ng-template>
+
+<h3>Tutor: {{name}}</h3>
+
+<div>
+  <a (click)="showMoreInfo()"> Más información
+    <i class="fa"
+    [ngClass]="{'fa-chevron-circle-down': !moreInfo, 'fa-chevron-circle-up': moreInfo}"></i>
+  </a>
+  <p *ngIf="moreInfo">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</div>
+
+<ul>
+  <li *ngFor="let topic of topics; index as position">  {{position+1}}.- {{topic}} </li>
+</ul>
 
 <div>
   <button
