@@ -9,6 +9,7 @@ export class TitleComponent implements OnInit{
   public name : string;
   public edad : number;
   public isAvailable : boolean = false;
+  public moreInfo : boolean = false;
 
   constructor() {}
 
@@ -19,5 +20,10 @@ export class TitleComponent implements OnInit{
 
   getEdadNombre() : string {
     return `${this.name} : ${this.edad}`;
+  }
+
+  showMoreInfo() {
+    this.moreInfo = !this.moreInfo;
+    console.log(this.moreInfo);
   }
 }
