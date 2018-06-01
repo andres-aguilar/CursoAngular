@@ -5,4 +5,4 @@
 
 </div>
 <input type="text" name="username" value="{{username}}" (change)="updateUsername($event)">
-<input type="text" name="name" value="{{name}}" (change)="updateName($event)">
+<input type="text" name="name" [(ngModel)]="name">

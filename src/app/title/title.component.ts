@@ -7,6 +7,9 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class TitleComponent implements OnInit{
   public name : string;
+  public launchDate : Date;
+  public price : number;
+  public seconds : number;
 
   public isAvailable : boolean = false;
   public moreInfo : boolean = false;
@@ -20,7 +23,10 @@ export class TitleComponent implements OnInit{
 
   ngOnInit() {
     this.name = 'Andres Aguilar';
+    this.launchDate = new Date(2018, 6, 20);
     this.category = "web";
+    this.price = 25;
+    this.seconds = 3660;
     this.topics = [
       'Fundamentos',
       'Componentes',
