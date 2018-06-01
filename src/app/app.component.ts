@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  userSubscribed(event : any) {
+    /* Capturando evento personalizado */
+    console.log("El usuario se suscribió");
+    console.log(event);
+  }
 }

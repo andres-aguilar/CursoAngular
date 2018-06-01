@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -10,12 +10,18 @@ export class UserCardComponent implements OnInit {
   public username : string;
   public avatar : string;
 
+  /* Declaración de evento personalizado */
+  @Output() subscribed = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
     this.name     = "Andres Aguilar";
     this.username = "Yosh";
     this.avatar   = "https://www.w3schools.com/howto/img_avatar.png";
+
+    /* Emitiendo evento personalizado */
+    setTimeout(()=>{ this.subscribed.emit(true) }, 3000)
   }
 
   updateUsername(event: any) {
