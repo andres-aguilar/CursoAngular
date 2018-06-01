@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1em;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  min-width: 350px;
+  max-width: 350px;
+  margin-left: 1em;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "imagen imagen username"
+                       "imagen imagen name";
+  grid-template-rows: 100px 100px;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-gap: 15px;
+}
+
+.username { grid-area: username}
+.name { grid-area: name}
+img {
+  grid-area: imagen;
+  max-width: 100%
+}
