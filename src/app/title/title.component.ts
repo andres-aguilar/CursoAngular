@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component ({
   selector: 'app-title',
@@ -13,6 +13,8 @@ export class TitleComponent implements OnInit{
   public category : string;  // mobile, web. other
 
   public topics : string[];
+
+  @Input() subscribed : boolean;
 
   constructor() {}
 

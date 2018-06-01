@@ -1,6 +1,6 @@
 <div>
   <app-full-screen>
-    <app-title></app-title>
+    <app-title [subscribed]="userSubscription"></app-title>
     <app-user-card (subscribed)="userSubscribed($event)"></app-user-card>
   </app-full-screen>
 </div>
