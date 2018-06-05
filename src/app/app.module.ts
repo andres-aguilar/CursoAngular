@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+
+// Pipes and custom directives
+import { SecondsToTimeFormat } from './pipes/secondsToTimeFormat.pipe';
+import { RedBorder} from './directives/redBorder.directive';
 
 // Services
 import { ArticlesService } from './services/articles.service';
@@ -19,10 +23,13 @@ import { ArticlesComponent } from './articles/articles.component';
     TitleComponent,
     FullScreenComponent,
     UserCardComponent,
+    SecondsToTimeFormat,
+    RedBorder,
     ArticlesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [ArticlesService],
   bootstrap: [AppComponent]

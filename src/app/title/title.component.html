@@ -1,6 +1,6 @@
 <h1> Curso Angular </h1>
 
-<p *ngIf="isAvailable; else available">Lanzamiento: Proximamente</p>
+<p *ngIf="!isAvailable; else available">Lanzamiento: {{ launchDate | date:"dd/MM/y" }}</p>
 <ng-template #available>
   <span class="highlight"> Curso disponible </span>
 </ng-template>
@@ -12,7 +12,7 @@
   <span *ngSwitchDefault>No especificado</span>
 </div>
 
-<h3>Tutor: {{name}}</h3>
+<h3 redBorder [color]="'blue'" [background]="'cyan'">Tutor: {{name}}</h3>
 
 <div>
   <a (click)="showMoreInfo()"> Más información
@@ -20,6 +20,7 @@
     [ngClass]="{'fa-chevron-circle-down': !moreInfo, 'fa-chevron-circle-up': moreInfo}"></i>
   </a>
   <p *ngIf="moreInfo">
+    <span style="display:block;font-weight:bold;">{{ seconds | secondsToTimeFormat}}</span>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
 </div>
@@ -32,5 +33,5 @@
   <button
   [disabled]="!isAvailable"
   [ngClass]="{active: !isAvailable && subscribed, shadow: isAvailable}"
-  type="button" name="button">Registrar</button>
+  type="button" name="button">Registrar  {{price | currency:"MXN"}}</button>
 </div>
