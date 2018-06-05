@@ -12,6 +12,7 @@ export class ArticlesComponent implements OnInit {
   constructor(private articlesS : ArticlesService) { }
 
   ngOnInit() {
+    this.articlesS.getAll();
   }
 
 }

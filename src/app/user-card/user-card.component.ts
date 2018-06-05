@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
+import { ArticlesService } from '../services/articles.service';
+
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
@@ -13,12 +15,14 @@ export class UserCardComponent implements OnInit {
   /* Declaración de evento personalizado */
   @Output() subscribed = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private articlesS: ArticlesService) { }
 
   ngOnInit() {
     this.name     = "Andres Aguilar";
     this.username = "Yosh";
     this.avatar   = "https://www.w3schools.com/howto/img_avatar.png";
+
+    this.articlesS.articlesCount = 20;
 
     /* Emitiendo evento personalizado */
     setTimeout(()=>{ this.subscribed.emit(true) }, 3000)
