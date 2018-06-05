@@ -13,6 +13,11 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit() {
     this.articlesS.getAll();
+
+    const observable = this.articlesS.buildObservable();
+    observable.subscribe((data) => {
+      console.log(data);
+    })
   }
 
 }

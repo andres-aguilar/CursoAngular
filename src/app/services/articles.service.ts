@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Observable } from 'rxjs';
+
 @Injectable()
 export class ArticlesService {
   private url: string = 'https://api.github.com/users/andres-aguilar/repos';
@@ -11,6 +13,12 @@ export class ArticlesService {
   getAll() {
     this.http.get(this.url).subscribe( data => {
       console.log(data);
+    })
+  }
+
+  buildObservable() : Observable<any>{
+    return Observable.create(function(observer) {
+      setInterval(() => observer.next('hola'), 1000)
     })
   }
 }
