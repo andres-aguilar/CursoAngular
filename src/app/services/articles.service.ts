@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+class Repo {
+  constructor(public id: string, public name: string) {}
+}
 
 @Injectable()
 export class ArticlesService {
@@ -11,7 +16,11 @@ export class ArticlesService {
   constructor(private http : HttpClient) {}
 
   getAll() {
-    this.http.get(this.url).subscribe( data => {
+    this.http.get(this.url)
+    .pipe(map((data: Repo[])=>{
+      return data.map(r => new Repo(r.id, r.name))
+    }))
+    .subscribe( (data) => {
       console.log(data);
     })
   }
