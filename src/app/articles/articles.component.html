@@ -1,3 +1,5 @@
-<h3> Repositorios: {{ articlesS.articlesCount }} </h3>
+<h3> Repositorios de Andres Aguilar en GitHub ({{ (articlesS.reposObserver | async)?.length }}) </h3>
 
-<p> Articulos de Andres Aguilar en GitHub </p>
+<ul>
+  <li *ngFor="let repo of articlesS.reposObserver | async"> {{repo.name}} </li>
+</ul>

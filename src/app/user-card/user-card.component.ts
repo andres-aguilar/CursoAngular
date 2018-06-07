@@ -22,8 +22,6 @@ export class UserCardComponent implements OnInit {
     this.username = "Yosh";
     this.avatar   = "https://www.w3schools.com/howto/img_avatar.png";
 
-    this.articlesS.articlesCount = 20;
-
     /* Emitiendo evento personalizado */
     setTimeout(()=>{ this.subscribed.emit(true) }, 3000)
   }
