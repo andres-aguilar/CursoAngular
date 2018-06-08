@@ -14,12 +14,12 @@
 
 <h3 redBorder [color]="'blue'" [background]="'cyan'">Tutor: {{name}}</h3>
 
-<div [@showUp]="moreInfo">
+<div [@showUp]="moreInfo" style="overflow: hidden">
   <a (click)="showMoreInfo()"> Más información
     <i class="fa"
     [ngClass]="{'fa-chevron-circle-down': !moreInfo, 'fa-chevron-circle-up': moreInfo}"></i>
   </a>
-  <p *ngIf="moreInfo">
+  <p>
     <span style="display:block;font-weight:bold;">{{ seconds | secondsToTimeFormat}}</span>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
