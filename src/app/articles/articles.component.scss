@@ -1,0 +1,18 @@
+ul {
+
+}
+
+.show {
+  animation: 0.6s ease-out 0s showUp;
+}
+
+@keyframes showUp {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: auto;
+    opacity: 1;
+  }
+}

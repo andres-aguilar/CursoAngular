@@ -1,5 +1,5 @@
 <h3> Repositorios de Andres Aguilar en GitHub ({{ (articlesS.reposObserver | async)?.length }}) </h3>
 
-<ul>
+<ul [class.show]="(articlesS.reposObserver | async)?.length > 0">
   <li *ngFor="let repo of articlesS.reposObserver | async"> {{repo.name}} </li>
 </ul>

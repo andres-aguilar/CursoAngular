@@ -1,9 +1,22 @@
-import {Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { trigger, style, transition, animate, state } from '@angular/animations';
 
 @Component ({
   selector: 'app-title',
   templateUrl: 'title.component.html',
-  styleUrls: ['title.component.scss']
+  styleUrls: ['title.component.scss'],
+  animations: [
+    trigger('showUp', [
+      state('0',style({
+        background: 'blue'
+      })),
+      state('1',style({
+        background: 'red'
+      })),
+      transition('0 => 1', animate('0.4s ease-out')),
+      transition('1 => 0', animate('0.4s ease-out'))
+    ])
+  ]
 })
 export class TitleComponent implements OnInit{
   public name : string;

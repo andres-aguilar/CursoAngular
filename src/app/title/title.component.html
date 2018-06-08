@@ -14,7 +14,7 @@
 
 <h3 redBorder [color]="'blue'" [background]="'cyan'">Tutor: {{name}}</h3>
 
-<div>
+<div [@showUp]="moreInfo">
   <a (click)="showMoreInfo()"> Más información
     <i class="fa"
     [ngClass]="{'fa-chevron-circle-down': !moreInfo, 'fa-chevron-circle-up': moreInfo}"></i>

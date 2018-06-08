@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 // Modules
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Pipes and custom directives
 import { SecondsToTimeFormat } from './pipes/secondsToTimeFormat.pipe';
@@ -33,7 +34,8 @@ import { ArticlesComponent } from './articles/articles.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [ArticlesService],
   bootstrap: [AppComponent]
