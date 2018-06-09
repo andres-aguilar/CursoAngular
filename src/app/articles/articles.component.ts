@@ -12,7 +12,7 @@ import { staggeredShowUp } from '../animations/staggeredShowUp.animation';
 })
 export class ArticlesComponent implements OnInit {
 
-  constructor(public articlesS : ArticlesService) { }
+  constructor(public articlesS: ArticlesService) { }
 
   ngOnInit() {
     this.articlesS.getAll();

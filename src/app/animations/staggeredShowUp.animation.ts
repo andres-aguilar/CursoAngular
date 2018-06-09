@@ -13,4 +13,4 @@ export const staggeredShowUp = trigger('staggeredShowUp', [
       ]))
     ]), {optional: true})
   ])
-])
+]);

@@ -9,7 +9,6 @@ export class FullScreenComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
 
 }

@@ -8,9 +8,9 @@ import { ArticlesService } from '../services/articles.service';
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent implements OnInit {
-  public name : string;
-  public username : string;
-  public avatar : string;
+  public name: string;
+  public username: string;
+  public avatar: string;
 
   /* Declaración de evento personalizado */
   @Output() subscribed = new EventEmitter<boolean>();
@@ -18,12 +18,12 @@ export class UserCardComponent implements OnInit {
   constructor(private articlesS: ArticlesService) { }
 
   ngOnInit() {
-    this.name     = "Andres Aguilar";
-    this.username = "Yosh";
-    this.avatar   = "https://www.w3schools.com/howto/img_avatar.png";
+    this.name     = 'Andres Aguilar';
+    this.username = 'Yosh';
+    this.avatar   = 'https://www.w3schools.com/howto/img_avatar.png';
 
     /* Emitiendo evento personalizado */
-    setTimeout(()=>{ this.subscribed.emit(true) }, 3000)
+    setTimeout(() => { this.subscribed.emit(true); }, 3000);
   }
 
   updateUsername(event: any) {

@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  userSubscription : boolean = false;
+  userSubscription = false;
 
-  userSubscribed(event : any) {
+  userSubscribed(event: any) {
     /* Capturando evento personalizado */
-    console.log("El usuario se suscribió");
+    console.log('El usuario se suscribió');
     this.userSubscription = event;
     console.log(event);
   }

@@ -10,22 +10,22 @@ class Repo {
 
 @Injectable()
 export class ArticlesService {
-  private url: string = 'https://api.github.com/users/andres-aguilar/repos';
-  public reposCount: number = 0;
-  public reposObserver : Observable<Repo[]>;
+  private url = 'https://api.github.com/users/andres-aguilar/repos';
+  public reposCount = 0;
+  public reposObserver: Observable<Repo[]>;
 
-  constructor(private http : HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getAll() {
     this.reposObserver = this.http.get(this.url)
-    .pipe(map((data: Object[])=>{
-      return data.map((r: any) => new Repo(r.id, r.name))
+    .pipe(map((data: Object[]) => {
+      return data.map((r: any) => new Repo(r.id, r.name));
     })).pipe(share());
   }
 
-  buildObservable() : Observable<any>{
+  buildObservable(): Observable<any> {
     return Observable.create(function(observer) {
-      setInterval(() => observer.next('hola'), 1000)
-    })
+      setInterval(() => observer.next('hola'), 1000);
+    });
   }
 }
